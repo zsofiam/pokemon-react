@@ -1,25 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export class PokemonItem extends Component{
-    getStyle = () => {
-        return{
+const PokemonItem = (props) => {
+    const getStyle =  {
+        
             backgroundColor:'#f4f4f4',
             padding: '10px',
             borderBottom: '1px #ccc dotted',
             textAlign: 'left',
             cursor: 'pointer'
-        }
     }
     
-    render(){
-        const{name} = this.props.pokemon;
-        const id = this.props.id;
+        const{name} = props.pokemon;
+        const id = props.id;
         return (
-            <div style={this.getStyle()}>
+            <div style={getStyle}>
                 <p>
-                <Link style={linkStyle} to={`/pokemon/${id}`}>
+                <Link to={`/pokemon/${id}`}>
                 {' '}
                 {name}
                 {}
@@ -27,26 +25,11 @@ export class PokemonItem extends Component{
                 </p>
             </div>
         )
-    }  
-}
-
-const linkStyle = {
-
 }
 
 // PropTypes:
 PokemonItem.propTypes = {
     pokemon: PropTypes.object.isRequired
 }
-
-/* const btnStyle = {
-    background: '#ff0000',
-    color: '#fff',
-    border: 'none',
-    padding: '5px 9px',
-    borderRadius: '50%',
-    cursor: 'pointer',
-    float: 'right'
-} */
 
 export default PokemonItem;

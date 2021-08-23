@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter } from "react-router";
 import axios from 'axios';
 
-class Pokemon extends Component {
-    state= {
+const Pokemon = props => {
+  const [state, setState] = useState( {
         pokemon: {}
-    }  
+    }  )
     
-    componentDidMount() {
-        const id = this.props.match.params.id;
+    useEffect(() => {
+        const id = props.match.params.id;
         axios.get("https://pokeapi.co/api/v2/pokemon/" + id.toString())
-    .then(res => this.setState({pokemon: res.data}));
-    }
+    .then(res => setState({pokemon: res.data}));
+  }, [])
 
-    render() {
-        const{name, height, weight} = this.state.pokemon;
-        const abilities = this.state.pokemon.abilities;
-        console.log(abilities);
-        const forms = this.state.pokemon.forms;
-        const types = this.state.pokemon.types;
+        const{name, height, weight} = state.pokemon;
+        const abilities = state.pokemon.abilities;
+        const forms = state.pokemon.forms;
+        const types = state.pokemon.types;
         return (<div>
          <h2>{name}</h2>
          <h3>Height: {height}</h3>
@@ -32,6 +30,6 @@ class Pokemon extends Component {
          </ul>
         </div>);
     }
-}
+
 
 export default withRouter(Pokemon);

@@ -1,16 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import PokemonItem from "./PokemonItem";
 import PropTypes from "prop-types";
 
-class Pokemons extends Component{
+const Pokemons = (props) => {
 
-    render(){
-
-        return this.props.pokemons.map((pokemon, index) => (
-            <PokemonItem key={index} id={index + 1} pokemon = {pokemon}/>
-        ));
-    }
-
+     return props.pokemons.map((pokemon, index) => (
+        <PokemonItem key={index} id={index + 1} pokemon = {pokemon}/>
+    ));
+    
 }
 
 // PropTypes:
