@@ -1,22 +1,39 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import styled, {ThemeProvider, css} from 'styled-components';
 
 function Header(){
     return (
-        <nav style={headerStyle}>
-            <h1>Pokémon</h1>
+        <ThemeProvider theme={themeDark}>
+        <Nav>
+            <H1>Pokémon</H1>
             <Link style={linkStyle} to="/pokemons">Pokemons</Link> |  
             <Link style={linkStyle} to="/types"> Types</Link>
-        </nav>
+        </Nav>
+        </ThemeProvider>
     )
 }
 
-const headerStyle = {
-    background: '#333',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px'
-}
+const themeDark = {
+    primary: '#fff',
+    secondary: 'teal'
+};
+
+const H1 = styled.h1`
+color: #fff;
+font-size: 3em;
+font-family: Fantasy;
+`;
+
+const Nav = styled.nav`
+    background: #333;
+    color: #fff;
+    textAlign: center;
+    padding: 10px;
+    &:hover {
+        background: #444;
+      }
+`;
 
 const linkStyle = {
     color: '#fff',

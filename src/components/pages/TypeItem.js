@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
+import '../Item.css';
 
 export class TypeItem extends Component{
     getStyle = () => {
@@ -15,7 +16,7 @@ export class TypeItem extends Component{
     render(){
         const{id,name} = this.props.type;
         return (
-            <div style={this.getStyle()}>
+            <div className="card" style={this.getStyle()}>
                 <p>
                 {' '}
                 {name}

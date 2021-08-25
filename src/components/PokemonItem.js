@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import './Item.css';
 
 export class PokemonItem extends Component{
     getStyle = () => {
@@ -17,7 +18,7 @@ export class PokemonItem extends Component{
         const{name} = this.props.pokemon;
         const id = this.props.id;
         return (
-            <div style={this.getStyle()}>
+            <div className="card" style={this.getStyle()}>
                 <p>
                 <Link style={linkStyle} to={`/pokemon/${id}`}>
                 {' '}

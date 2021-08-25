@@ -32,12 +32,16 @@ class App extends Component {
           <Header/>
           <Route path="/pokemons" render ={props => (
             <React.Fragment>
+              <div className="wrapper">
           <Pokemons pokemons = {this.state.pokemons}/>
+            </div>
             </React.Fragment>
           )}/>
           <Route path="/types" render ={props => (
             <React.Fragment>
+              <div className="wrapper">
           <Types types = {this.state.types}/>
+          </div>
             </React.Fragment>
           )}/>
 
