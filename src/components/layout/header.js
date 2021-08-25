@@ -4,7 +4,7 @@ import styled, {ThemeProvider, css} from 'styled-components';
 
 function Header(){
     return (
-        <ThemeProvider theme={themeDark}>
+        <ThemeProvider theme={themeFantasy}>
         <Nav>
             <H1>Pokémon</H1>
             <Link style={linkStyle} to="/pokemons">Pokemons</Link> |  
@@ -14,24 +14,34 @@ function Header(){
     )
 }
 
-const themeDark = {
-    primary: '#fff',
-    secondary: 'teal'
+const themeFantasy = {
+    fontFamily: 'Fantasy',
+    fontSize: '3rem',
+    color: '#a88532',
+    background: '#a8327f',
+    backgroundHover: '#a8326d'
+};
+
+const themeNormal = {
+    fontFamily: 'sans-serif',
+    fontSize: '2em',
+    color: 'white',
+    background: 'black'
 };
 
 const H1 = styled.h1`
-color: #fff;
-font-size: 3em;
-font-family: Fantasy;
+color: ${(props) => props.theme.color};
+font-size: ${(props) => props.theme.fontSize};
+font-family: ${(props) => props.theme.fontFamily};
+
 `;
 
 const Nav = styled.nav`
-    background: #333;
-    color: #fff;
+    background: ${(props) => props.theme.background};
     textAlign: center;
     padding: 10px;
     &:hover {
-        background: #444;
+        background: ${(props) => props.theme.backgroundHover};
       }
 `;
 
