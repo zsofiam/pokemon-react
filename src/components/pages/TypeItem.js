@@ -4,9 +4,9 @@ import '../Item.css';
 
 const TypeItem = (props) => {
     
-        const{id,name} = props.type;
+        const{name} = props.type;
         return (
-            <div className="card" style={getStyle()}>
+            <div className="card" style={getStyle}>
                 <p>
                 {' '}
                 {name}
