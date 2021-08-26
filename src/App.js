@@ -10,8 +10,6 @@ import axios from 'axios';
 const App = () => {
   const [state, setState] = useState({
     pokemons: [ 
-    ],
-    types: [
     ]
   })
 
