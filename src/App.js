@@ -28,12 +28,16 @@ const App = () => {
           <Header/>
           <Route path="/pokemons" render ={props => (
             <React.Fragment>
+              <div className="wrapper">
           <Pokemons pokemons = {state.pokemons}/>
+            </div>
             </React.Fragment>
           )}/>
           <Route path="/types" render ={props => (
             <React.Fragment>
+              <div className="wrapper">
           <Types/>
+          </div>
             </React.Fragment>
           )}/>
 

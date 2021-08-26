@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import '../Item.css';
 
 const TypeItem = (props) => {
     
         const{id,name} = props.type;
         return (
-            <div key={id} style={getStyle}>
+            <div className="card" style={getStyle()}>
                 <p>
                 {' '}
                 {name}

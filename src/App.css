@@ -47,3 +47,12 @@
   padding: 7px 20 px;
   cursor: pointer;
 }
+
+.wrapper {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 1em;
+  grid-auto-rows: 100px;
+}
