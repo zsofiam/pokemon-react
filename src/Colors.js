@@ -1,11 +1,17 @@
 const AppTheme = {
-    light: {
-        textColor: "#000",
-        backgroundColor: "#fff"
+    fantasy: {
+        fontFamily: 'Fantasy',
+        fontSize: '3rem',
+        color: '#a88532',
+        background: '#a8327f',
+        backgroundHover: '#a8326d'
     },
-    dark: {
-        textColor: "#fff",
-        backgroundColor: "#333"
+    normal: {
+        fontFamily: 'sans-serif',
+        fontSize: '2em',
+        color: 'white',
+        background: 'black',
+        backgroundHover: '#444'
     }
 }
 

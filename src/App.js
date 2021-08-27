@@ -12,17 +12,15 @@ const App = () => {
   const [state, setState] = useState({
     pokemons: [ 
     ]
-  })
+  });
 
   useEffect(() => {
     axios.get('https://pokeapi.co/api/v2/pokemon')
     .then(res => setState({pokemons: res.data.results}));
   }, [])
 
-  const theme = "light";
-     
     return(
-      <ThemeContext.Provider value={theme}>
+      
       <Router>
       <div className="App">
         <div className="container">
@@ -49,7 +47,7 @@ const App = () => {
         </div>
       </div>
       </Router>
-      </ThemeContext.Provider>
+      
     );
   }
 
