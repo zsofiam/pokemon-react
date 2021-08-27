@@ -6,6 +6,7 @@ import Types from './components/pages/Types';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Pokemon from './components/pages/Pokemon';
 import axios from 'axios';
+import ThemeContext from './context/ThemeContext';
 
 const App = () => {
   const [state, setState] = useState({
@@ -18,8 +19,10 @@ const App = () => {
     .then(res => setState({pokemons: res.data.results}));
   }, [])
 
-   
+  const theme = "light";
+     
     return(
+      <ThemeContext.Provider value={theme}>
       <Router>
       <div className="App">
         <div className="container">
@@ -46,6 +49,7 @@ const App = () => {
         </div>
       </div>
       </Router>
+      </ThemeContext.Provider>
     );
   }
 
